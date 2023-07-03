@@ -4,10 +4,10 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 import { Icon } from 'astro-icon'
 
-export async function getStaticPaths() {
-  const data = await fetch('http://localhost:3001/posts.json').then((response) => response.json())
+import postsData from '../../../public/posts.json'
 
-  return data.map((post) => {
+export async function getStaticPaths() {
+  return postsData.map((post) => {
     return {
       params: { post: post.name.replaceAll(' ', '-').toLowerCase() },
       props: { post, philosephy: post.philosephy, name: post.name, title: post.title, blurb: post.blurb, photo: post.photo },
