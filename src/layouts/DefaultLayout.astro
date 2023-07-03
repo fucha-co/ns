@@ -67,10 +67,11 @@ const {
       }
 
       // sticky footer on low content pages
-      html,
       body {
-        height: 100%;
-        overflow-x: hidden;
+        min-height: 100vh;
+        // Use the dynamic viewport for the minimum height if possible. This unit accounts for browser
+        // chrome in realtime.
+        min-height: 100dvh;
       }
 
       body {
