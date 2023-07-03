@@ -1,0 +1,31 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon'
+import Feature from '../components/Feature.astro'
+import Form from '../components/Form.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+
+const { img = '/src/assets/img/stock-welcome.jpg' } = Astro.props
+---
+
+<DefaultLayout id="" title="">
+  <section class="hero my-24">
+    <div class="container">
+      <div class="grid grid-cols-1 items-center sm:items-start gap-24 lg:grid-cols-2">
+        <div class="flex flex-col items-center gap-8 md:items-start">
+          <h1 class="text-center text-6xl md:text-left lg:text-8xl">Bookings</h1>
+          <p class="text-2xl">
+            Please fill the form if you'd like to self-refer for nutrition support.
+          </p>
+          <Form/>
+        </div>
+        <div>
+          <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />  
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+</DefaultLayout>

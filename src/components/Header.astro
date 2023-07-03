@@ -7,33 +7,46 @@ import { Icon } from 'astro-icon'
 <header>
   <SkipLinks />
   <Navigation>
-    <li class="menu-item">
+    <!--li class="menu-item">
       <a href="/">Home</a>
+    </li-->
+    <li class="menu-item">
+      <a href="/about-us/">About</a>
     </li>
     <li class="menu-item">
-      <a href="/blog/">Blog</a>
+      <a href="/services/">Services</a>
     </li>
-    <li class="menu-item has-dropdown">
-      <button aria-haspopup="true" aria-expanded="false">Example Pages</button>
+    <!--li class="menu-item has-dropdown">
+      <button aria-haspopup="true" aria-expanded="false">Services</button>
       <ul class="dropdown-menu">
         <li class="submenu-item">
-          <a href="/mdx-page/">MDX Page</a>
+          <a href="/weight-loss/">Weight Loss</a>
         </li>
         <li class="submenu-item">
-          <a href="/markdown-page/">Markdown Page</a>
+          <a href="/weight-loss-surgery">Weight Loss Surgery</a>
         </li>
         <li class="submenu-item">
-          <a href="/accessible-components">Accessible Components</a>
+          <a href="/food-intolerance-and-ibs/">Food Intolerances & IBS</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/diabetes-support">Diabetes Support</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/services/">> See All Services</a>
         </li>
       </ul>
+    </li-->
+    <li class="menu-item">
+      <a href="/our-team/">Team</a>
     </li>
     <li class="menu-item">
-      <a href="https://accessible-astro.dev" title="external link" rel="external noopener noreferrer">External Link</a>
+      <a href="/bookings" title="external link" rel="external noopener noreferrer">Bookings</a>
     </li>
-    <li class="menu-item type-icon">
-      <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the GitHub page">
-        <Icon pack="ion" name="logo-github" />
-      </a>
+    <li class="menu-item">
+      <a href="/contact" title="external link" rel="external noopener noreferrer">Contact</a>
+    </li>
+    <li class="menu-item">
+      <a href="tel:+61394174087" title="external link" rel="external noopener noreferrer" class="font-bold !text-black dark:!text-white !underline underline-offset-8">(03) 9417 4087</a>
     </li>
   </Navigation>
 </header>

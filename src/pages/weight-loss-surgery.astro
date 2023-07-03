@@ -1,0 +1,61 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon'
+import {
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Card,
+  Media,
+  Modal,
+  Notification,
+  Pagination,
+} from 'accessible-astro-components'
+
+const { img = '/src/assets/img/stock-smile-sunset.jpg' } = Astro.props
+---
+
+<DefaultLayout id="" title="">
+
+  <section class="hero my-24">
+    <div class="container">
+      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+        <div class="flex flex-col items-center gap-8 md:items-start">
+          <h1 class="text-center text-6xl md:text-left lg:text-8xl">
+            Weight Loss Surgery
+          </h1>
+          <p class="text-2xl">
+            We're experts in weight loss surgery support. With ~80 new weight loss surgery clients each week our clinic is committed to helping you achieve reach your weight goals.
+          </p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon" href="#more">
+              <Icon pack="icon-park-outline" name="arrow-down" />
+              Learn More
+            </a>
+            <a
+              class="button has-icon color-secondary"
+              href="/bookings"
+            >
+              <Icon pack="ion" name="time" />
+              Book Now
+            </a>
+          </div>
+        </div>
+        <img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="my-12">
+    <div class="space-content container">
+      <h1>With Nutrition Solutions</h1>
+      
+        <p class="text-2xl ">
+          We are experts in weight loss surgery support, with approximately 80 weight loss surgery clients visiting our clinic each week. We are committed to helping you achieve reach your weight goals, improve your relationship with food and ensure you are feeling healthy and well-nourished after surgery. Our dietitians have experience supporting people who have had a gastric sleeve, gastric bypass, gastric band or gastric balloon.
+        </p>
+        
+    </div>
+  </section>
+ 
+</DefaultLayout>

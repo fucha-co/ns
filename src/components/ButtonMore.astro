@@ -1,0 +1,9 @@
+---
+import { Icon } from 'astro-icon'
+
+const { text = "Read More" } = Astro.props;
+---
+<a class="button has-icon" href="#more">
+    <Icon pack="icon-park-outline" name="arrow-down" />
+    {text}
+</a>

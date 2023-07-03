@@ -1,0 +1,69 @@
+<!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<form netlify class="text-xl text-black dark:text-white" name="Booking Form" value="NSV Website Booking Form" method="POST">
+    <div class="space-y-12">
+        <div class="border-b border-gray-900/10 pb-12">
+            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div class="sm:col-span-3">
+                    <label for="first-name" class="block font-medium leading-6">First name *</label>
+                    <div class="mt-2">
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-4" required>
+                    </div>
+                </div>
+                <div class="sm:col-span-3">
+                    <label for="last-name" class="block font-medium leading-6">Last name *</label>
+                    <div class="mt-2">
+                        <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-4" required>
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
+                    <label for="email" class="block font-medium leading-6">Email address *</label>
+                    <div class="mt-2">
+                        <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-4" required>
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
+                    <label for="phone" class="block font-medium leading-6">Phone Number *</label>
+                    <div class="mt-2">
+                        <input id="phone" required name="phone" type="tel" autocomplete="tel" type="number" class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-4">
+                    </div>
+                </div>
+                <div class="sm:col-span-3">
+                    <label for="service" class="block font-medium leading-6">Service *</label>
+                    <div class="mt-2">
+                        <select id="service" name="service" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs p-4" required>
+                            <option value="" disabled selected>Select your service</option>
+                            <option>Weight Loss</option>
+                            <option>Weight Loss Surgery</option>
+                            <option>Food Intolerances & IBS</option>
+                            <option>Diabetes Support</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-span-full">
+                    <label for="street-address" class="block font-medium leading-6">Please provide us with a brief description of how we can help you</label>
+                    <div class="mt-2">
+                        <textarea required rows="8" name="street-address" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-4"></textarea>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+    </div>
+    <div class="mt-6 flex items-center justify-start gap-x-6">
+        <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Send</button>
+    </div>
+</form>

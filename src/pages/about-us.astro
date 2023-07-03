@@ -1,0 +1,67 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon'
+import {
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Card,
+  Media,
+  Modal,
+  Notification,
+  Pagination,
+} from 'accessible-astro-components'
+
+const { img = '/src/assets/img/ns-group.jpg', id = 'more' } = Astro.props
+---
+
+<DefaultLayout id="" title="">
+  <section class="hero my-24">
+    <div class="container">
+      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+        <div class="flex flex-col items-center gap-8 md:items-start">
+          <h1 class="text-center text-6xl md:text-left lg:text-8xl">About Us</h1>
+          <p class="text-2xl">
+            We're a team of experienced dietitians who approach nutrition in a way that promotes enjoyment
+            and exploration into food. We recognise that dietary choices are highly individual and the importance of finding
+            a balance between eating the foods we love and living a healthy lifestyle.
+          </p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon" href="#more">
+              <Icon pack="icon-park-outline" name="arrow-down" />
+              Learn More
+            </a>
+            <a class="button has-icon color-secondary" href="/bookings">
+              <Icon pack="ion" name="time" />
+              Book Now
+            </a>
+          </div>
+        </div>
+        <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <anchorLink />
+  <section class="my-12">
+    <div class="space-content container">
+      <h1>
+        <!--Icon pack="icon-park-outline" name="abdominal" class="w-10 h-10 inline-block -mt-2 mr-2 text-[#d494ff]"/-->
+        With Nutrition Solutions
+      </h1>
+
+      <p class="text-2xl max-w-6xl">
+        Nutrition Solutions is a team of experienced dietitians who approach nutrition in a way that promotes enjoyment
+        and exploration into food. We recognise that dietary choices are highly individual and the importance of finding
+        a balance between eating the foods we love and living a healthy lifestyle. On top of a passion for food, our
+        dietitians are qualified experts in the field of nutrition and provide scientifically-based nutrition advice for
+        all types of health conditions. We aim to deliver dietary advice to you in a way that is practical, achievable
+        and sustainable. We understand the importance of tailoring nutrition advice to suit your goals and lifestyle and
+        will provide you with a personalised nutrition plan. Whether your goal is to look better, have more energy,
+        improve self-esteem or address a particular health concern, we are here to support you on your journey to better
+        health.
+      </p>
+    </div>
+  </section>
+</DefaultLayout>

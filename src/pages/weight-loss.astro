@@ -1,0 +1,74 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon'
+import {
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Card,
+  Media,
+  Modal,
+  Notification,
+  Pagination,
+} from 'accessible-astro-components'
+
+const { img = '/src/assets/img/ns-flex-pair-sm.jpg' } = Astro.props
+---
+
+<DefaultLayout id="" title="">
+
+  <section class="hero my-24">
+    <div class="container">
+      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+        <div class="flex flex-col items-center gap-8 md:items-start">
+          <h1 class="text-center text-6xl md:text-left lg:text-8xl">
+            Weight Loss
+          </h1>
+          <p class="text-2xl">
+            Do you feel trapped in a cycle of yo-yo dieting or struggling to budge your weight more than a few kilograms?
+            Our holistic approach can help you.
+          </p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon" href="#more">
+              <Icon pack="icon-park-outline" name="arrow-down" />
+              Learn More
+            </a>
+            <a
+              class="button has-icon color-secondary"
+              href="/bookings"
+            >
+              <Icon pack="ion" name="time" />
+              Book Now
+            </a>
+          </div>
+        </div>
+        <img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="my-12">
+    <div class="space-content container">
+      <h1>
+        <!--Icon pack="icon-park-outline" name="abdominal" class="w-10 h-10 inline-block -mt-2 mr-2 text-[#d494ff]"/-->
+        With Nutrition Solutions
+      </h1>
+      
+        <p class="text-2xl ">
+          Do you feel trapped in a cycle of yo-yo dieting or struggling to budge your weight more than a few kilograms? We
+          have seen many people experiencing this, and use a holistic approach to identify why you may be struggling to
+          lose weight. We recognise that a ‘one size fits all approach’ is not appropriate when it comes to
+          weight-management. We can help you to: Stop the yo-yo dieting cycle Manage your snacking Find the style of
+          eating that best suits you Find foods that keep your appetite well controlled Improve your energy levels Our
+          team are committed to helping our clients achieve a body weight they feel comfortable with, improving their
+          relationship with food and accomplishing personalised goals. We also work closely with specialist Exercise
+          Physiologists and Eating Behavioural Psychologists and can facilitate referrals if required If you need help
+          with any of the above, or are unsure about how to begin working towards a healthy, nourishing diet for you, get
+          in touch with us.
+        </p>
+        
+    </div>
+  </section>
+ 
+</DefaultLayout>
