@@ -15,7 +15,7 @@ export default defineConfig({
       name: 'sharp',
     },
   ],
-  //experimental: { assets: true }, // // docs.astro.build/en/guides/assets/ & astro.build/blog/images/
+  experimental: { assets: true }, // // docs.astro.build/en/guides/assets/ & astro.build/blog/images/
 })
 
 

@@ -13,8 +13,8 @@ import {
   Pagination,
 } from 'accessible-astro-components'
 ---
-
 <DefaultLayout id="" title="">
+
   <section class="my-12">
     <div class="space-content container">
       <h1>Accessible Components</h1>
@@ -25,6 +25,7 @@ import {
       </p>
     </div>
   </section>
+
   <section class="mb-12 mt-32">
     <div class="container">
       <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
@@ -69,82 +70,155 @@ import {
             </AccordionItem>
           </Accordion>
         </div>
+
         <div class="space-content">
           <h2>Breadcrumbs</h2>
-          <Breadcrumbs>
-            <BreadcrumbsItem href="/" label="Home" />
-            <BreadcrumbsItem href="/blog" label="Blog" />
-            <BreadcrumbsItem currentPage={true} label="My blog post" />
-          </Breadcrumbs>
+          <nav aria-label="Breadcrumb">
+            <ol role="list" class="breadcrumbs">
+              <li role="listitem" class="breadcrumbs-item">
+                <a href="/">Home</a>
+              </li>
+              <li role="listitem" class="breadcrumbs-item">
+                <a href="/blog">Blog</a>
+              </li>
+              <li role="listitem" class="breadcrumbs-item" aria-current="page">
+                My blog post
+              </li>
+            </ol>
+          </nav>
         </div>
+
         <div class="space-content">
           <h2>Cards</h2>
-          <Card
-            img="https://images.unsplash.com/photo-1636819488524-1f019c4e1c44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-          />
+          <div class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1636819488524-1f019c4e1c44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Card Image">
+            </div>
+            <div class="card-content">
+              <p class="card-text">Card Content</p>
+            </div>
+          </div>
         </div>
+
         <div class="space-content">
           <h2>DarkMode Toggle</h2>
           <p>This component can be viewed in the top right corner besides the main navigation.</p>
         </div>
+
         <div class="space-content">
           <h2>Media</h2>
-          <Media
-            class="rounded-lg"
-            src="https://images.unsplash.com/photo-1636819488537-a9b1ffb315ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-          />
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1636819488537-a9b1ffb315ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Media Image" class="media-image">
+          </div>
         </div>
+
         <div class="space-content">
           <h2>Modals</h2>
-          <button id="modal1-trigger" class="button">Modal 1</button>&nbsp;
-          <button id="modal2-trigger" class="button color-secondary">Modal 2</button>
-          <Modal triggerId="modal1-trigger" title="Modal 1">
-            <p>Why hello, I be the <strong>first</strong> Modal.</p>
-          </Modal>
-          <Modal triggerId="modal2-trigger" title="Modal 2" closeText="Cancel">
-            <p>
-              Ah yes, and I be the <strong>second</strong> Modal. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Sed, a! Ratione eaque temporibus alias tempora pariatur dolorem.
-            </p>
-            <button class="button" onclick="closeModal()">Confirm action</button>
-          </Modal>
+          <button
+            id="modal1-trigger"
+            class="button"
+            aria-controls="modal1-content"
+            aria-haspopup="dialog"
+          >Modal 1</button>&nbsp;
+          <button
+            id="modal2-trigger"
+            class="button color-secondary"
+            aria-controls="modal2-content"
+            aria-haspopup="dialog"
+          >Modal 2</button>
+          <div
+            id="modal1-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal1-trigger"
+            class="modal"
+            hidden
+          >
+            <h2 id="modal1-title">Modal 1</h2>
+            <div class="modal-content">
+              <p>Why hello, I be the <strong>first</strong> Modal.</p>
+            </div>
+          </div>
+          <div
+            id="modal2-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal2-trigger"
+            class="modal"
+            hidden
+          >
+            <h2 id="modal2-title">Modal 2</h2>
+            <div class="modal-content">
+              <p>
+                Ah yes, and I be the <strong>second</strong> Modal. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Sed, a! Ratione eaque temporibus alias tempora pariatur dolorem.
+              </p>
+              <button class="button" onclick="closeModal()">Confirm action</button>
+            </div>
+          </div>
         </div>
+
         <div class="space-content">
           <h2>Notification</h2>
-          <Notification>
-            <Icon pack="ion" name="notifications-outline" /><p><strong>Message:</strong> This is a notification!</p>
-          </Notification>
-          <Notification type="info">
-            <Icon pack="ion" name="information-circle-outline" /><p>
-              <strong>Info:</strong> This is a notification of type info.
-            </p>
-          </Notification>
-          <Notification type="success">
-            <Icon pack="ion" name="checkbox-outline" /><p>
-              <strong>Success:</strong> This is a notification of type success.
-            </p>
-          </Notification>
-          <Notification type="warning">
-            <Icon pack="ion" name="warning-outline" /><p>
-              <strong>Warning:</strong> This is a notification of type warning and goes on multiple lines to see how that
-              looks.
-            </p>
-          </Notification>
-          <Notification type="error">
-            <Icon pack="ion" name="alert-circle-outline" /><p>
-              <strong>Error:</strong> This is a notification of type error.
-            </p>
-          </Notification>
+          <div class="notification">
+            <Icon pack="ion" name="notifications-outline"></Icon>
+            <p><strong>Message:</strong> This is a notification!</p>
+          </div>
+          <div class="notification notification-info">
+            <Icon pack="ion" name="information-circle-outline"></Icon>
+            <p><strong>Info:</strong> This is a notification of type info.</p>
+          </div>
+          <div class="notification notification-success">
+            <Icon pack="ion" name="checkbox-outline"></Icon>
+            <p><strong>Success:</strong> This is a notification of type success.</p>
+          </div>
+          <div class="notification notification-warning">
+            <Icon pack="ion" name="warning-outline"></Icon>
+            <p><strong>Warning:</strong> This is a notification of type warning and goes on multiple lines to see how that
+              looks.</p>
+          </div>
+          <div class="notification notification-error">
+            <Icon pack="ion" name="alert-circle-outline"></Icon>
+            <p><strong>Error:</strong> This is a notification of type error.</p>
+          </div>
         </div>
+
         <div class="space-content">
           <h2>Pagination</h2>
-          <Pagination totalPages="200" />
+          <nav aria-label="Pagination">
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous" class="pagination-link" onclick="return false;">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="pagination-link" onclick="return false;">1</a>
+              </li>
+              <li>
+                <a href="#" class="pagination-link" onclick="return false;">2</a>
+              </li>
+              <li>
+                <a href="#" class="pagination-link" onclick="return false;">3</a>
+              </li>
+              <li>
+                <a href="#" aria-label="Next" class="pagination-link" onclick="return false;">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
+
         <div class="space-content">
           <h2>SkipLinks</h2>
-          <p>This component can be viewed by shift+tabbing untill they show up.</p>
+          <a href="#main-content">Skip to main content</a>
         </div>
+
       </div>
     </div>
   </section>
+
 </DefaultLayout>

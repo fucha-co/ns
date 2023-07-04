@@ -12,8 +12,9 @@ import {
   Notification,
   Pagination,
 } from 'accessible-astro-components'
+import { Image } from "astro:assets"
+import img from '../assets/img/ns-group.jpg'
 
-const { img = '/src/assets/img/ns-group.jpg', id = 'more' } = Astro.props
 ---
 
 <DefaultLayout id="" title="">
@@ -38,7 +39,8 @@ const { img = '/src/assets/img/ns-group.jpg', id = 'more' } = Astro.props
             </a>
           </div>
         </div>
-        <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />
+        <Image class="hidden rounded-lg lg:block" src={img} alt="" style="height: 100%; width: 100%; object-fit: cover;" height="682" width="1024" />
+        <!--img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" /-->
       </div>
     </div>
   </section>

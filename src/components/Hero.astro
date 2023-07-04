@@ -3,7 +3,12 @@ import { Icon } from 'astro-icon'
 import ButtonBook from '../components/ButtonBook.astro'
 import ButtonMore from '../components/ButtonMore.astro'
 
-const { src = '/src/assets/img/ns-hero.jpg' } = Astro.props
+import { Image } from "astro:assets"
+
+//const { src = 'ns-hero.jpg' } = Astro.props
+import imgHero from '../assets/img/ns-hero-doc.jpg'
+
+const { imgHero = 'ns-hero.jpg' } = Astro.props
 ---
 
 <section class="hero my-24">
@@ -18,7 +23,8 @@ const { src = '/src/assets/img/ns-hero.jpg' } = Astro.props
           <ButtonBook/>
         </div>
       </div>
-      <img class="rounded-lg hidden lg:block" src={src} alt="" decoding="async" />
+      <Image class="rounded-lg rounded-lg hidden lg:block" src={imgHero} height="1438" width="1458" alt="" style="height: 100%; width: 100%; object-fit: cover;" />
+      <!--img class="rounded-lg hidden lg:block" src={src} alt="" decoding="async" /-->
     </div>
   </div>
 </section>

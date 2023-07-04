@@ -7,7 +7,15 @@ import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
 
-const { img = '/src/assets/img/stock-doc.jpg' } = Astro.props
+// Import the <Image /> component
+import { Image } from "astro:assets"
+// Import a reference to the image itself
+import imgHero from '../assets/img/stock-doc.jpg'
+import img1 from '../assets/img/ns-flex-pair-sm.jpg'
+import img2 from '../assets/img/stock-smile-sunset.jpg'
+import img3 from '../assets/img/stock-on-bed.jpg'
+import img4 from '../assets/img/stock-diabetes.jpg'
+
 ---
 
 <DefaultLayout title="Home">
@@ -37,7 +45,8 @@ const { img = '/src/assets/img/stock-doc.jpg' } = Astro.props
             </a>
           </div>
         </div>
-        <img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" />
+        <Image src={imgHero} alt="pic" class="hidden rounded-lg lg:block"  style="height: 100%; width: 100%; object-fit: cover;" height="682" width="1024" />
+        <!--img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" /-->
       </div>
     </div>
   </section>
@@ -55,46 +64,46 @@ const { img = '/src/assets/img/stock-doc.jpg' } = Astro.props
   </section>
 
   <Anchor/>
-  <ContentMedia imgSrc="/src/assets/img/ns-flex-pair-sm.jpg" reverseImg={false}>
+  <ContentMedia imgSrc={img1} reverseImg={false} >
     <h2>Weight Loss</h2>
     <p class="text-2xl">
-      We recognise that a ‘one size fits all approach’ is not appropriate when it comes to weight-management. We can help you to: Stop the yo-yo dieting cycle Manage your snacking Find the style of eating that best suits you Find foods that keep your appetite well controlled Improve your energy levels.
+      We recognise that a “one size fits all approach” is not appropriate when it comes to weight-management. We can help you to: Stop the yo-yo dieting cycle Manage your snacking Find the style of eating that best suits you Find foods that keep your appetite well controlled Improve your energy levels.
       <br><br>
       <a class="button has-icon max-w-max" href="/about-us">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+        Learn More <Icon pack="icon-park-outline" name="arrow-right">
       </a>
     </p>
   </ContentMedia>
 
-  <ContentMedia imgSrc="/src/assets/img/stock-smile-sunset.jpg" reverseImg={true}>
+  <ContentMedia imgSrc={img2} reverseImg={true}>
     <h2>Weight Loss Surgery</h2>
     <p class="text-2xl">
       We are experts in weight loss surgery support and we are committed to helping you achieve reach your weight goals, improve your relationship with food and ensure you are feeling healthy and well-nourished after surgery.
       <br><br>
       <a class="button has-icon max-w-max" href="/">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+        Learn More <Icon pack="icon-park-outline" name="arrow-right">
       </a>
     </p>
   </ContentMedia>
 
-  <ContentMedia imgSrc="/src/assets/img/stock-on-bed.jpg" reverseImg={false}>
+  <ContentMedia imgSrc={img3} reverseImg={false}>
     <h2>Food Intolerances & IBS</h2>
     <p class="text-2xl">
       Food intolerances and irritable bowel syndrome (IBS) are better recognised and more commonly diagnosed than ever before. Symptoms from foods can emerge at any stage of life, even from foods you previously tolerated!
       <br><br>
       <a class="button has-icon max-w-max" href="/">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+        Learn More <Icon pack="icon-park-outline" name="arrow-right">
       </a>
     </p>
   </ContentMedia>
 
-  <ContentMedia imgSrc="/src/assets/img/stock-diabetes.jpg" reverseImg={true}>
+  <ContentMedia imgSrc={img4} reverseImg={true}>
     <h2>Diabetes Support</h2>
     <p class="text-2xl">
       Diabetes is a complex condition which requires good understanding of how food affects your blood sugar levels. We can help! We have found that a lot of dietary advice for diabetics is outdated and unhelpful.
       <br><br>
       <a class="button has-icon max-w-max" href="/">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+        Learn More <Icon pack="icon-park-outline" name="arrow-right">
       </a>
     </p>
   </ContentMedia>
