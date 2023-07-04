@@ -10,13 +10,15 @@ export async function getStaticPaths({ paginate }) {
   return paginate(postsData, { pageSize: 16 })
 }
 
+import { Image } from "astro:assets"
+import team from '../../assets/img/ns-team.jpg'
+
 const { page } = Astro.props
-const { img = '/src/assets/img/ns-group.jpg' } = Astro.props
 ---
 
 <DefaultLayout
-  title="Blog"
-  description="An example of a blog with dynamic content fetched from JSONPlaceholder using the title, body and userId."
+  title="Team"
+  description=""
 >
 
 <section class="hero my-24">
@@ -43,7 +45,8 @@ const { img = '/src/assets/img/ns-group.jpg' } = Astro.props
           </a>
         </div>
       </div>
-      <img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" />
+      <Image class="hidden rounded-lg lg:block" src={team} alt="" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
+      <!--img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" /-->
     </div>
   </div>
 </section>
@@ -64,7 +67,7 @@ const { img = '/src/assets/img/ns-group.jpg' } = Astro.props
             <li>
               <Card
                 url={'/our-team/' + post.name.replaceAll(' ', '-').toLowerCase()}
-                img={'/src/assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'}
+                img={'../../assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'}
                 title={post.name}
                 footer={''}
               >

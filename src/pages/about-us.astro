@@ -12,8 +12,9 @@ import {
   Notification,
   Pagination,
 } from 'accessible-astro-components'
+
 import { Image } from "astro:assets"
-import img from '../assets/img/ns-group.jpg'
+import team from '../assets/img/ns-team.jpg'
 
 ---
 
@@ -39,7 +40,7 @@ import img from '../assets/img/ns-group.jpg'
             </a>
           </div>
         </div>
-        <Image class="hidden rounded-lg lg:block" src={img} alt="" style="height: 100%; width: 100%; object-fit: cover;" height="682" width="1024" />
+        <Image class="hidden rounded-lg lg:block" src={team} alt="" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
         <!--img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" /-->
       </div>
     </div>

@@ -2,13 +2,13 @@
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
 import { Image } from "astro:assets"
-import img from '../assets/img/logo.png'
+import logo from '../assets/img/logo.png'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <Image class="" src={img} alt="" width="47" height="37" style="" />
+      <Image class="" src={logo} alt="" width="47" height="37" style="" />
       <!--img src='logo.png' alt="NSV Logo" width="47" height="37" /-->
       <span class="font-bold text-2xl sm:text-xl">
         <span class="inline sm:hidden">NSV</span>

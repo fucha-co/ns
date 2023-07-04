@@ -6,7 +6,8 @@ import Form from '../components/Form.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
 
-const { img = '/src/assets/img/stock-welcome.jpg' } = Astro.props
+import { Image } from "astro:assets"
+import welcome from '../assets/img/stock-welcome.jpg'
 ---
 
 <DefaultLayout id="" title="">
@@ -21,7 +22,7 @@ const { img = '/src/assets/img/stock-welcome.jpg' } = Astro.props
           <Form/>
         </div>
         <div>
-          <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />  
+          <Image class="hidden rounded-lg lg:block" src={welcome} alt="" height="4406" width="5507" style="height: 100%; width: 100%; object-fit: cover;" />
         </div>
         
       </div>

@@ -15,7 +15,9 @@ export async function getStaticPaths() {
   })
 }
 
-const { post, img = '/ns-group.jpg' } = Astro.props
+import { Image } from "astro:assets"
+import team from '../assets/img/ns-team.jpg'
+const { post } = Astro.props
 ---
 
 <DefaultLayout name={post.name} title={post.title} img={post.photo} description={post.name} url={post.title}>
@@ -55,13 +57,8 @@ const { post, img = '/ns-group.jpg' } = Astro.props
             </a>
           </div>
         </div>
-        <img
-          class="hidden rounded-lg lg:block"
-          src={'/src/assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'}
-          "
-          alt=""
-          decoding="async"
-        />
+        <Image class="hidden rounded-lg lg:block" src={'/src/assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'} alt="" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
+        <!-- img class="hidden rounded-lg lg:block" src={'/src/assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'} alt="" decoding="async" /-->
       </div>
     </div>
   </section>

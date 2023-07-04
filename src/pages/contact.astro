@@ -7,7 +7,8 @@ import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
 import FormContact from '../components/FormContact.astro'
 
-const { img = '/src/assets/img/stock-laptop-crop.jpg' } = Astro.props
+import { Image } from "astro:assets"
+import laptop from '../assets/img/stock-laptop-crop.jpg'
 ---
 
 <DefaultLayout id="" title="">
@@ -22,7 +23,7 @@ const { img = '/src/assets/img/stock-laptop-crop.jpg' } = Astro.props
           <FormContact/>
         </div>
         <div>
-          <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />  
+          <Image class="hidden rounded-lg lg:block" src={laptop} alt="" height="2400" width="2405" style="height: 100%; width: 100%; object-fit: cover;" />
         </div>
         
       </div>

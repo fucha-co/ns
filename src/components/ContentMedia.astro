@@ -1,16 +1,16 @@
 ---
 import { Image } from 'astro:assets';
-const { imgSrc, reverseImg = false } = Astro.props;
+const { imgSrc, reverseImg = false, imgWidth, imgHeight } = Astro.props;
 ---
 
 <section class="my-64">
   <div class="container">
     <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
-      {!reverseImg ? <Image class="rounded-lg" src={imgSrc} alt="" style="height: 100%; width: 100%; object-fit: cover;" /> : ''}
+      {!reverseImg ? <Image class="rounded-lg" src={imgSrc} alt="" width={imgWidth} height={imgHeight} alt="" style="height: 100%; width: 100%; object-fit: cover;" /> : ''}
       <div class="space-content flex flex-col justify-center">
         <slot />
       </div>
-      {reverseImg ? <Image class="rounded-lg" src={imgSrc} alt="" style="height: 100%; width: 100%; object-fit: cover;" /> : ''}
+      {reverseImg ? <Image class="rounded-lg" src={imgSrc} alt="" width={imgWidth} height={imgHeight} alt="" style="height: 100%; width: 100%; object-fit: cover;" /> : ''}
     </div>
   </div>
 </section>

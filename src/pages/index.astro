@@ -11,13 +11,10 @@ import ContentMedia from '../components/ContentMedia.astro'
 // Import the <Image /> component
  import { Image } from "astro:assets"
 // Import a reference to the image itself
-import img1 from '../assets/img/stock.jpg'
-import img1 from '../assets/img/stock-doc.jpg'
-import img2 from '../assets/img/stock-smile-sunset.jpg'
-import img3 from '../assets/img/stock-on-bed.jpg'
+import team from '../assets/img/ns-team.jpg'
+import heart from '../assets/img/stock-heart.jpg'
+import stockTeam from '../assets/img/stock-team.jpg'
 import img4 from '../assets/img/stock-diabetes.jpg'
-
-const { imgSrc = 'stock.jpg' } = Astro.props
 ---
 
 <DefaultLayout title="Home">
@@ -43,7 +40,7 @@ const { imgSrc = 'stock.jpg' } = Astro.props
   </section>
 
   <Anchor/>
-  <ContentMedia imgSrc={img1}>
+  <ContentMedia imgSrc={team} imgWidth={1024} imgHeight={682} >
     <h2>Our Expertice</h2>
     <p class="text-2xl">
       Nutrition Solutions is a team of experienced dietitians who approach nutrition in a way that promotes enjoyment and exploration into food. We recognise that dietary choices are highly individual and the importance of finding the balance between eating the foods we love and living a healthy lifestyle.
@@ -54,7 +51,7 @@ const { imgSrc = 'stock.jpg' } = Astro.props
     </p>
   </ContentMedia>
 
-  <ContentMedia imgSrc={img2} reverseImg={true}>
+  <ContentMedia imgSrc={heart} imgWidth={1024} imgHeight={682} reverseImg={true}>
     <h2>Our Services</h2>
     <p class="text-2xl">
       On top of a passion for food, our dietitians are qualified experts in the field of nutrition and provide science-based advice for all types of health conditions.
@@ -65,7 +62,7 @@ const { imgSrc = 'stock.jpg' } = Astro.props
     </p>
   </ContentMedia>
 
-  <ContentMedia imgSrc={img3}>
+  <ContentMedia imgSrc={stockTeam} imgWidth={620} imgHeight={486}>
     <h2>Our Team</h2>
     <p class="text-2xl">
       On top of a passion for food, our dietitians are qualified experts in the field of nutrition and provide science-based advice for all types of health conditions.

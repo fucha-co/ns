@@ -2,6 +2,8 @@
 import CallToAction from './CallToAction.astro'
 
 const currentYear = new Date().getFullYear()
+import { Image } from "astro:assets"
+import logo from '../assets/img/logo.png'
 ---
 
 <footer>
@@ -28,7 +30,7 @@ const currentYear = new Date().getFullYear()
             
             <div class="mt-16 grid grid-cols-2 xl:col-span-2 xl:mt-0">
               <a href="/" class="flex items-center gap-2 !no-underline">
-                <img src="/src/assets/img/logo.png" alt="NSV Logo" width="47" height="37" />
+                <Image class="" src={logo} alt="" width="47" height="37" style="" />
                 <span class="text-2xl font-bold sm:text-3xl">
                   <span class="inline sm:hidden">NSV</span>
                   <span class="hidden sm:inline">Nutrition Solutions Victoria</span>
