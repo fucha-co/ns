@@ -3,55 +3,64 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 
 import Anchor from '../components/Anchor.astro'
 import { Icon } from 'astro-icon'
-import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
 
 // Import the <Image /> component
-import { Image } from "astro:assets"
+import { Image } from 'astro:assets'
 // Import a reference to the image itself
 import imgHero from '../assets/img/stock-heart.jpg'
-import img1 from '../assets/img/ns-flex-pair-sm.jpg'
+import imgSrc from '../assets/img/ns-flex-pair-sm.jpg'
 import img2 from '../assets/img/stock-smile-sunset.jpg'
 import img3 from '../assets/img/stock-on-bed.jpg'
 import img4 from '../assets/img/stock-diabetes.jpg'
-
+const {
+  img1,
+  img2,
+  img3,
+  img4,
+  imgSrc = '../assets/img/ns-flex-pair-sm.jpg',
+  reverseImg = false,
+  imgWidth,
+  imgHeight,
+} = Astro.props
 ---
 
 <DefaultLayout title="Home">
-  
   <section class="hero my-24">
     <div class="container">
       <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
         <div class="flex flex-col items-center gap-8 md:items-start">
-          <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-            Our Services
-          </h1>
+          <h1 class="text-center text-6xl md:text-left lg:text-8xl">Our Services</h1>
           <p class="text-2xl">
-            Do you feel trapped in a cycle of yo-yo dieting or struggling to budge your weight more than a few kilograms?
-            Our holistic approach can help you.
+            Do you feel trapped in a cycle of yo-yo dieting or struggling to budge your weight more than a few
+            kilograms? Our holistic approach can help you.
           </p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row">
             <a class="button has-icon" href="#more">
               <Icon pack="icon-park-outline" name="arrow-down" />
               Learn More
             </a>
-            <a
-              class="button has-icon color-secondary"
-              href="/bookings"
-            >
+            <a class="button has-icon color-secondary" href="/bookings">
               <Icon pack="ion" name="time" />
               Book Now
             </a>
           </div>
         </div>
-        <Image src={imgHero} alt="pic" class="hidden rounded-lg lg:block" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
+        <Image
+          src={imgHero}
+          alt="pic"
+          class="hidden rounded-lg lg:block"
+          height="682"
+          width="1024"
+          style="height: 100%; width: 100%; object-fit: cover;"
+        />
         <!--img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" /-->
       </div>
     </div>
   </section>
 
-  <section class="mt-32 mb-32">
+  <section class="mb-32 mt-32">
     <div class="container">
       <!--h2 class="mb-16 text-6xl">Counters</h2-->
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
@@ -63,51 +72,53 @@ import img4 from '../assets/img/stock-diabetes.jpg'
     </div>
   </section>
 
-  <Anchor/>
-  <ContentMedia src={img1} reverseImg={false} imgWidth={620} imgHeight={486}>
+  <Anchor />
+  <ContentMedia reverseImg={false} imgWidth={620} imgHeight={486}>
     <h2>Weight Loss</h2>
     <p class="text-2xl">
-      We recognise that a “one size fits all approach” is not appropriate when it comes to weight-management. We can help you to: Stop the yo-yo dieting cycle Manage your snacking Find the style of eating that best suits you Find foods that keep your appetite well controlled Improve your energy levels.
-      <br><br>
+      We recognise that a “one size fits all approach” is not appropriate when it comes to weight-management. We can
+      help you to: Stop the yo-yo dieting cycle Manage your snacking Find the style of eating that best suits you Find
+      foods that keep your appetite well controlled Improve your energy levels.
+      <br /><br />
       <a class="button has-icon max-w-max" href="/about-us">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right">
+        Learn More <Icon pack="icon-park-outline" name="arrow-right" />
       </a>
     </p>
+
+    <ContentMedia reverseImg={true} imgWidth={620} imgHeight={486}>
+      <h2>Weight Loss Surgery</h2>
+      <p class="text-2xl">
+        We are experts in weight loss surgery support and we are committed to helping you achieve reach your weight
+        goals, improve your relationship with food and ensure you are feeling healthy and well-nourished after surgery.
+        <br /><br />
+        <a class="button has-icon max-w-max" href="/">
+          Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+        </a>
+      </p>
+
+      <ContentMedia reverseImg={false} imgWidth={620} imgHeight={486}>
+        <h2>Food Intolerances & IBS</h2>
+        <p class="text-2xl">
+          Food intolerances and irritable bowel syndrome (IBS) are better recognised and more commonly diagnosed than
+          ever before. Symptoms from foods can emerge at any stage of life, even from foods you previously tolerated!
+          <br /><br />
+          <a class="button has-icon max-w-max" href="/">
+            Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+          </a>
+        </p>
+
+        <ContentMedia reverseImg={true} imgWidth={620} imgHeight={486}>
+          <h2>Diabetes Support</h2>
+          <p class="text-2xl">
+            Diabetes is a complex condition which requires good understanding of how food affects your blood sugar
+            levels. We can help! We have found that a lot of dietary advice for diabetics is outdated and unhelpful.
+            <br /><br />
+            <a class="button has-icon max-w-max" href="/">
+              Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+            </a>
+          </p>
+        </ContentMedia>
+      </ContentMedia>
+    </ContentMedia>
   </ContentMedia>
-
-  <ContentMedia src={img2} reverseImg={true} imgWidth={620} imgHeight={486}>
-    <h2>Weight Loss Surgery</h2>
-    <p class="text-2xl">
-      We are experts in weight loss surgery support and we are committed to helping you achieve reach your weight goals, improve your relationship with food and ensure you are feeling healthy and well-nourished after surgery.
-      <br><br>
-      <a class="button has-icon max-w-max" href="/">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right">
-      </a>
-    </p>
-  </ContentMedia>
-
-  <ContentMedia src={img3} reverseImg={false} imgWidth={620} imgHeight={486}>
-    <h2>Food Intolerances & IBS</h2>
-    <p class="text-2xl">
-      Food intolerances and irritable bowel syndrome (IBS) are better recognised and more commonly diagnosed than ever before. Symptoms from foods can emerge at any stage of life, even from foods you previously tolerated!
-      <br><br>
-      <a class="button has-icon max-w-max" href="/">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right">
-      </a>
-    </p>
-  </ContentMedia>
-
-  <ContentMedia src={img4} reverseImg={true} imgWidth={620} imgHeight={486}>
-    <h2>Diabetes Support</h2>
-    <p class="text-2xl">
-      Diabetes is a complex condition which requires good understanding of how food affects your blood sugar levels. We can help! We have found that a lot of dietary advice for diabetics is outdated and unhelpful.
-      <br><br>
-      <a class="button has-icon max-w-max" href="/">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right">
-      </a>
-    </p>
-  </ContentMedia>
-
-
- 
 </DefaultLayout>

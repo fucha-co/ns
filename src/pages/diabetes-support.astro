@@ -17,34 +17,27 @@ const { img = '/src/assets/img/stock-diabetes.jpg' } = Astro.props
 ---
 
 <DefaultLayout id="" title="">
-
   <section class="hero my-24">
     <div class="container">
       <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
         <div class="flex flex-col items-center gap-8 md:items-start">
-          <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-            Diabetes Support
-          </h1>
+          <h1 class="text-center text-6xl md:text-left lg:text-8xl">Diabetes Support</h1>
           <p class="text-2xl">
-            Diabetes is a complex condition which requires good understanding of how food affects your blood sugar levels. We can help!
-
-            We have found that a lot of dietary advice for diabetics is outdated and unhelpful.
+            Diabetes is a complex condition which requires good understanding of how food affects your blood sugar
+            levels. We can help! We have found that a lot of dietary advice for diabetics is outdated and unhelpful.
           </p>
           <div class="flex flex-col gap-3 min-[500px]:flex-row">
             <a class="button has-icon" href="#more">
               <Icon pack="icon-park-outline" name="arrow-down" />
               Learn More
             </a>
-            <a
-              class="button has-icon color-secondary"
-              href="/bookings"
-            >
+            <a class="button has-icon color-secondary" href="/bookings">
               <Icon pack="ion" name="time" />
               Book Now
             </a>
           </div>
         </div>
-        <img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" />
+        <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />
       </div>
     </div>
   </section>
@@ -52,24 +45,16 @@ const { img = '/src/assets/img/stock-diabetes.jpg' } = Astro.props
   <section class="my-12">
     <div class="space-content container">
       <h1>With Nutrition Solutions</h1>
-      
-        <p class="text-2xl ">
-          Diabetes is a complex condition which requires good understanding of how food affects your blood sugar levels. We can help!
 
-We have found that a lot of dietary advice for diabetics is outdated and unhelpful.
-
-We can help you to:
-
-Understand your condition
-Improve your blood sugar levels
-Find a diet that best suits your style of eating
-Reduce the risk of some of some health conditions associated with diabetes
-Our team is committed to helping you find a diet where you can continue to eat the foods that you love. We tailor our advice to suit your goals and lifestyle. Our aim is to help you feel confident and in-control of your food choices.
-
-If you would like to speak to our one of our dietitians, simply call the office, or book using our online enquiry form.
-        </p>
-        
+      <p class="text-2xl max-w-6xl">
+        Diabetes is a complex condition which requires good understanding of how food affects your blood sugar levels.
+        We can help! We have found that a lot of dietary advice for diabetics is outdated and unhelpful. We can help you
+        to: Understand your condition Improve your blood sugar levels Find a diet that best suits your style of eating
+        Reduce the risk of some of some health conditions associated with diabetes Our team is committed to helping you
+        find a diet where you can continue to eat the foods that you love. We tailor our advice to suit your goals and
+        lifestyle. Our aim is to help you feel confident and in-control of your food choices. If you would like to speak
+        to our one of our dietitians, simply call the office, or book using our online enquiry form.
+      </p>
     </div>
   </section>
- 
 </DefaultLayout>

@@ -1,4 +1,6 @@
 ---
+// # OUR TEAM
+
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 
 import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
@@ -57,7 +59,7 @@ const { post } = Astro.props
             </a>
           </div>
         </div>
-        <Image class="hidden rounded-lg lg:block" src={'/src/assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'} alt="" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
+        <Image class="hidden rounded-lg lg:block" src={'../../assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'} alt="" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
         <!-- img class="hidden rounded-lg lg:block" src={'/src/assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'} alt="" decoding="async" /-->
       </div>
     </div>
@@ -65,25 +67,25 @@ const { post } = Astro.props
   <section class="my-12">
     <div class="container">
       <h1 class="text-4xl"><Icon pack="mdi" name="think-outline" class="w-12 h-12 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Philosophy</h1><br />
-      <p class="text-2xl">{post.philosophy}</p>
+      <p class="text-2xl max-w-6xl">{post.philosophy}</p>
     </div>
   </section>
   <section class="my-12">
     <div class="container">
       <h1 class="text-4xl"><Icon pack="icon-park-outline" name="personal-collection" class="w-10 h-10 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Personally</h1><br />
-      <p class="text-2xl">{post.personal}</p>
+      <p class="text-2xl max-w-6xl">{post.personal}</p>
     </div>
   </section>
   <section class="my-12">
     <div class="container">
       <h1 class="text-4xl"><Icon pack="icon-park-outline" name="star" class="w-10 h-10 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Experience</h1><br />
-      <p class="text-2xl">{post.experience}</p>
+      <p class="text-2xl max-w-6xl">{post.experience}</p>
     </div>
   </section>
   <section class="my-12">
     <div class="container">
       <h1 class="text-4xl"><Icon pack="icon-park-outline" name="crown-three" class="w-10 h-10 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Qualifications</h1><br />
-      <p class="text-2xl">{post.qualifications}</p>
+      <p class="text-2xl max-w-6xl">{post.qualifications}</p>
     </div>
   </section>
 </DefaultLayout>
