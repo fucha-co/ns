@@ -2,24 +2,18 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 
 import Anchor from '../components/Anchor.astro'
-import { Icon } from 'astro-icon'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
-
-// Import the <Image /> component
+import { Icon } from 'astro-icon'
 import { Image } from 'astro:assets'
-// Import a reference to the image itself
+
 import imgHero from '../assets/img/stock-heart.jpg'
-import imgSrc from '../assets/img/ns-flex-pair-sm.jpg'
+import img1 from '../assets/img/ns-flex-pair-sm.jpg'
 import img2 from '../assets/img/stock-smile-sunset.jpg'
 import img3 from '../assets/img/stock-on-bed.jpg'
 import img4 from '../assets/img/stock-diabetes.jpg'
+
 const {
-  img1,
-  img2,
-  img3,
-  img4,
-  imgSrc = '../assets/img/ns-flex-pair-sm.jpg',
   reverseImg = false,
   imgWidth,
   imgHeight,
@@ -73,19 +67,20 @@ const {
   </section>
 
   <Anchor />
-  <ContentMedia reverseImg={false} imgWidth={620} imgHeight={486}>
-    <h2>Weight Loss</h2>
-    <p class="text-2xl">
-      We recognise that a “one size fits all approach” is not appropriate when it comes to weight-management. We can
-      help you to: Stop the yo-yo dieting cycle Manage your snacking Find the style of eating that best suits you Find
-      foods that keep your appetite well controlled Improve your energy levels.
-      <br /><br />
-      <a class="button has-icon max-w-max" href="/about-us">
-        Learn More <Icon pack="icon-park-outline" name="arrow-right" />
-      </a>
-    </p>
+    <ContentMedia imgSrc={img1} reverseImg={false} imgWidth={620} imgHeight={486}>
+      <h2>Weight Loss</h2>
+      <p class="text-2xl">
+        We recognise that a “one size fits all approach” is not appropriate when it comes to weight-management. We can
+        help you to: Stop the yo-yo dieting cycle Manage your snacking Find the style of eating that best suits you Find
+        foods that keep your appetite well controlled Improve your energy levels.
+        <br /><br />
+        <a class="button has-icon max-w-max" href="/about-us">
+          Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+        </a>
+      </p>
+    </ContentMedia>
 
-    <ContentMedia reverseImg={true} imgWidth={620} imgHeight={486}>
+    <ContentMedia imgSrc={img2} reverseImg={true} imgWidth={620} imgHeight={486}>
       <h2>Weight Loss Surgery</h2>
       <p class="text-2xl">
         We are experts in weight loss surgery support and we are committed to helping you achieve reach your weight
@@ -95,30 +90,30 @@ const {
           Learn More <Icon pack="icon-park-outline" name="arrow-right" />
         </a>
       </p>
-
-      <ContentMedia reverseImg={false} imgWidth={620} imgHeight={486}>
-        <h2>Food Intolerances & IBS</h2>
-        <p class="text-2xl">
-          Food intolerances and irritable bowel syndrome (IBS) are better recognised and more commonly diagnosed than
-          ever before. Symptoms from foods can emerge at any stage of life, even from foods you previously tolerated!
-          <br /><br />
-          <a class="button has-icon max-w-max" href="/">
-            Learn More <Icon pack="icon-park-outline" name="arrow-right" />
-          </a>
-        </p>
-
-        <ContentMedia reverseImg={true} imgWidth={620} imgHeight={486}>
-          <h2>Diabetes Support</h2>
-          <p class="text-2xl">
-            Diabetes is a complex condition which requires good understanding of how food affects your blood sugar
-            levels. We can help! We have found that a lot of dietary advice for diabetics is outdated and unhelpful.
-            <br /><br />
-            <a class="button has-icon max-w-max" href="/">
-              Learn More <Icon pack="icon-park-outline" name="arrow-right" />
-            </a>
-          </p>
-        </ContentMedia>
-      </ContentMedia>
     </ContentMedia>
-  </ContentMedia>
+
+    <ContentMedia imgSrc={img3} reverseImg={false} imgWidth={620} imgHeight={486}>
+      <h2>Food Intolerances & IBS</h2>
+      <p class="text-2xl">
+        Food intolerances and irritable bowel syndrome (IBS) are better recognised and more commonly diagnosed than
+        ever before. Symptoms from foods can emerge at any stage of life, even from foods you previously tolerated!
+        <br /><br />
+        <a class="button has-icon max-w-max" href="/">
+          Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+        </a>
+      </p>
+    </ContentMedia>
+
+    <ContentMedia imgSrc={img4} reverseImg={true} imgWidth={620} imgHeight={486}>
+      <h2>Diabetes Support</h2>
+      <p class="text-2xl">
+        Diabetes is a complex condition which requires good understanding of how food affects your blood sugar
+        levels. We can help! We have found that a lot of dietary advice for diabetics is outdated and unhelpful.
+        <br /><br />
+        <a class="button has-icon max-w-max" href="/">
+          Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+        </a>
+      </p>
+    </ContentMedia>
+
 </DefaultLayout>

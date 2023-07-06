@@ -1,0 +1,93 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+
+import Anchor from '../components/Anchor.astro'
+import { Icon } from 'astro-icon'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+
+// Import the <Image /> component
+import { Image } from 'astro:assets'
+// Import a reference to the image itself
+import imgHero from '../assets/img/ns-team.jpg'
+import hannah from '../assets/img/team-hannah-wilson-outside.jpg'
+import ashleigh from '../assets/img/team-ashleigh-gale.jpg'
+
+const {
+   reverseImg = false,
+//   imgWidth,
+//   imgHeight,
+} = Astro.props
+---
+
+<DefaultLayout title="Home">
+  <section class="hero my-24">
+    <div class="container">
+      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+        <div class="flex flex-col items-center gap-8 md:items-start">
+          <h1 class="text-center text-6xl md:text-left lg:text-8xl">Our Team</h1>
+          <p class="text-2xl">
+            Do you feel trapped in a cycle of yo-yo dieting or struggling to budge your weight more than a few
+            kilograms? Our holistic approach can help you.
+          </p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon" href="#more">
+              <Icon pack="icon-park-outline" name="arrow-down" />
+              Learn More
+            </a>
+            <a class="button has-icon color-secondary" href="/bookings">
+              <Icon pack="ion" name="time" />
+              Book Now
+            </a>
+          </div>
+        </div>
+        <Image
+          src={imgHero}
+          alt="pic"
+          class="hidden rounded-lg lg:block"
+          height="682"
+          width="1024"
+          style="height: 100%; width: 100%; object-fit: cover;"
+        />
+        <!--img class="rounded-lg hidden lg:block" src={img} alt="" decoding="async" /-->
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-32 mt-32">
+    <div class="container">
+      <!--h2 class="mb-16 text-6xl">Counters</h2-->
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="1000+" title="Happy" sub="Customers" />
+        <Counter count="10+" title="Years" sub="In Business" />
+        <Counter count="10" title="Expert" sub="Nutritionists" />
+        <Counter count="1" title="🙅🏾🦖" sub="Website" />
+      </div>
+    </div>
+  </section>
+
+  <Anchor />
+  
+  <ContentMedia imgSrc={hannah} imgWidth={1024} imgHeight={682} >
+    <h2>Hannah Wilson</h2>
+    <p class="text-2xl">
+      Hannah Wilson is an Accredited Practicing Dietitian and Nutritionist based in Melbourne, Australia with a desire to deliver useful and personable advice for people seeking to optimise their health through food.
+      <br><br>
+      <a class="button has-icon max-w-max" href="/about-us">
+        Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+      </a>
+    </p>
+  </ContentMedia>
+
+  <ContentMedia imgSrc={ashleigh} imgWidth={1024} imgHeight={682} reverseImg={true}>
+    <h2>Ashleigh Gale</h2>
+    <p class="text-2xl">
+      Ashleigh Gale presents evidence based dietary and lifestyle changes that are both realistic, and goal orientated so you can achieve the results you are looking for, and be supported along the way.
+      <br><br>
+      <a class="button has-icon max-w-max" href="/">
+        Learn More <Icon pack="icon-park-outline" name="arrow-right" />
+      </a>
+    </p>
+  </ContentMedia>
+   
+</DefaultLayout>

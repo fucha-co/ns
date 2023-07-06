@@ -4,7 +4,8 @@
 
 .button {
   display: inline-block;
-  padding: 0.75rem 1rem;
+  // padding: 0.75rem 1rem;
+  padding: 0.75rem 2rem 0.75rem 1.5rem;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -22,7 +23,7 @@
   }
 
   &:visited {
-    color: var(--neutral-900);
+    color: #fff;
   }
 
   &.color-secondary {
