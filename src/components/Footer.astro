@@ -2,74 +2,59 @@
 import CallToAction from './CallToAction.astro'
 
 const currentYear = new Date().getFullYear()
-import { Image } from "astro:assets"
+import { Image } from 'astro:assets'
 import logo from '../assets/img/logo.png'
-
 ---
 
 <footer>
   <section class="py-8">
-    <div class="container border-t py-8 dark:border-white/10">
-      <!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
+    <div class="container">
       <footer class="" aria-labelledby="footer-heading">
         <h2 id="footer-heading" class="sr-only">Footer</h2>
         <div class="">
-          <div class="xl:grid xl:grid-cols-3 mt-16 xl:mt-0">
-              <a href="/" class="flex items-center gap-2 !no-underline">
-                <Image class="" src={logo} alt="" width="47" height="37" style="" />
-                <span class="text-2xl font-bold sm:text-3xl">
-                  <span class="inline sm:hidden">NSV</span>
-                  <span class="hidden sm:inline">Nutrition Solutions Victoria</span>
-                </span>
-              </a>
-                <div class="">
-                  <!--h3 class=" font-semibold leading-6 text-gray-900">Solutions</h3-->
-                  <ul role="list" class="mt-6 space-y-4 xl:mt-0 w-fit xl:mx-auto">
-                    <li>
-                      <a href="/" class="leading-6 text-gray-600 hover:text-gray-900">Home</a>
-                    </li>
-                    <li>
-                      <a href="/about-us" class="leading-6 text-gray-600 hover:text-gray-900">About</a>
-                    </li>
-                    <li>
-                      <a href="/services" class="leading-6 text-gray-600 hover:text-gray-900">Services</a>
-                    </li>
-                    <li>
-                      <a href="/our-team" class="leading-6 text-gray-600 hover:text-gray-900">Team</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="">
-                  <!--h3 class=" font-semibold leading-6 text-gray-900">Support</h3-->
-                  <ul role="list" class="mt-6 space-y-4 xl:mt-0 w-fit xl:mx-auto">
-                    <li>
-                      <a href="#" class="leading-6 text-gray-600 hover:text-gray-900">FAQs</a>
-                    </li>
-                    <li>
-                      <a href="/bookings" class="leading-6 text-gray-600 hover:text-gray-900">Bookings</a>
-                    </li>
-                    <li>
-                      <a href="/contact-us" class="leading-6 text-gray-600 hover:text-gray-900">Contact</a>
-                    </li>
+          <div class="border-y border-gray-900/10 dark:border-white/10 py-8 mt-16 xl:mt-16 xl:grid xl:grid-cols-3">
+            <a href="/" class="flex items-center gap-2 !no-underline">
+              <Image class="" src={logo} alt="" width="47" height="37" style="" />
+              <span class="text-2xl font-bold sm:text-3xl">
+                <span class="inline sm:hidden">NSV</span>
+                <span class="hidden sm:inline">Nutrition Solutions Victoria</span>
+              </span>
+            </a>
+            <div class="">
+              <!--h3 class=" font-semibold leading-6 text-gray-900">Solutions</h3-->
+              <ul role="list" class="mt-6 w-fit space-y-4 xl:mx-auto xl:mt-2">
+                <li>
+                  <a href="/" class="leading-6 text-gray-600 hover:text-gray-900">Home</a>
+                </li>
+                <li>
+                  <a href="/about-us" class="leading-6 text-gray-600 hover:text-gray-900">About</a>
+                </li>
+                <li>
+                  <a href="/services" class="leading-6 text-gray-600 hover:text-gray-900">Services</a>
+                </li>
+                <li>
+                  <a href="/our-team" class="leading-6 text-gray-600 hover:text-gray-900">Team</a>
+                </li>
+              </ul>
+            </div>
+            <div class="">
+              <!--h3 class=" font-semibold leading-6 text-gray-900">Support</h3-->
+              <ul role="list" class="mt-6 w-fit space-y-4 xl:mx-auto xl:mt-0">
+                <li>
+                  <a href="#" class="leading-6 text-gray-600 hover:text-gray-900">FAQs</a>
+                </li>
+                <li>
+                  <a href="/bookings" class="leading-6 text-gray-600 hover:text-gray-900">Bookings</a>
+                </li>
+                <li>
+                  <a href="/contact-us" class="leading-6 text-gray-600 hover:text-gray-900">Contact</a>
+                </li>
 
-                    <li>
-                      <a href="#" class="leading-6 text-gray-600 hover:text-gray-900">(03) 9417 4087</a>
-                    </li>
-                  </ul>
-                </div>
+                <li>
+                  <a href="#" class="leading-6 text-gray-600 hover:text-gray-900">(03) 9417 4087</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <!--div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
             <div>
@@ -84,11 +69,13 @@ import logo from '../assets/img/logo.png'
               </div>
             </form>
           </div-->
-          <div
-            class="mt-8 border-t border-gray-900/10 pt-8 dark:border-white/10 md:flex md:items-center md:justify-between"
-          >
+          <div class="mt-8 md:flex md:items-center md:justify-between">
             <div class="flex space-x-6 md:order-2">
-              <a target="_blank" href="https://www.facebook.com/nutritionsolutionsvictoria" class="text-gray-400 hover:text-gray-500">
+              <a
+                target="_blank"
+                href="https://www.facebook.com/nutritionsolutionsvictoria"
+                class="text-gray-400 hover:text-gray-500"
+              >
                 <span class="sr-only">Facebook</span>
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -97,7 +84,11 @@ import logo from '../assets/img/logo.png'
                     clip-rule="evenodd"></path>
                 </svg>
               </a>
-              <a target="_blank" href="https://www.instagram.com/nutritionsolutionsvictoria/" class="text-gray-400 hover:text-gray-500">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/nutritionsolutionsvictoria/"
+                class="text-gray-400 hover:text-gray-500"
+              >
                 <span class="sr-only">Instagram</span>
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -125,16 +116,15 @@ import logo from '../assets/img/logo.png'
               </a>
             </div>
             <p class="mt-8 leading-5 md:order-1 md:mt-0">
-              Nutrition Solutions Victoria 
+              Nutrition Solutions Victoria
               <span class="dark:text-[#6befe0]">&copy; {currentYear}</span>
-               <span class="hidden sm:inline-block">&middot;</span>
-               <span class="sm:hidden"><br></span>
-               <span class="font-">Website advice &amp; strategy by <a href="https://www.fucha.co/">FUCHA</a></span>
+              <span class="hidden sm:inline-block">&middot;</span>
+              <span class="sm:hidden"><br /></span>
+              <span class="font-">Website advice &amp; strategy by <a href="https://www.fucha.co/">FUCHA</a></span>
             </p>
           </div>
         </div>
       </footer>
-
     </div>
   </section>
 </footer>
