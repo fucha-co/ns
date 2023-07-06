@@ -20,8 +20,8 @@ export default defineConfig({
   experimental: {
     assets: true, // docs.astro.build/en/guides/assets/ & astro.build/blog/images/
   },
-  output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  // output: 'server',
+  // adapter: node({
+  //   mode: 'standalone',
+  // }),
 })
