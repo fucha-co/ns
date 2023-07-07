@@ -3,9 +3,12 @@ import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
 import { Image } from "astro:assets"
 import logo from '../assets/img/nsv-logo-highres.png'
+import BgGradO from './BgGradO.astro'
+import BgGradC from './BgGradC.astro'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
+  
   <div class="container">
     <a href="/" class="hover:!ns-secondary flex items-center gap-2 !no-underline">
       <Image class="" src={logo} alt="" width="300" height="264" style="" />
@@ -30,6 +33,7 @@ import logo from '../assets/img/nsv-logo-highres.png'
       </ul>
     </nav>
   </div>
+  
 </div>
 
 <script>

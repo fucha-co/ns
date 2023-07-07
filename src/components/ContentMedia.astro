@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 const { img1, img2, img3, img4, imgSrc, reverseImg = false, imgWidth, imgHeight } = Astro.props;
 ---
 
-<section class="my-64">
+<section class="my-64 last:mb-20">
   <div class="container">
     <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
       {!reverseImg ? <Image class="rounded-lg" src={imgSrc} alt="" width={imgWidth} height={imgHeight} alt="" style="height: 100%; width: 100%; object-fit: cover;" /> : ''}
