@@ -13,40 +13,30 @@ import {
   Pagination,
 } from 'accessible-astro-components'
 
+import Anchor from '../components/Anchor.astro'
+import Hero from '../components/Hero.astro'
 import { Image } from "astro:assets"
-import team from '../assets/img/ns-team.jpg'
+import img from '../assets/img/ns-team.jpg'
+
+const {
+  reverseImg = false,
+  imgWidth,
+  imgHeight,
+  title = 'About Us',
+  blurb = 'We are a team of experienced dietitians who approach nutrition in a way that promotes enjoyment and exploration into food. We recognise that dietary choices are highly individual and the importance of finding a balance between eating the foods we love and living a healthy lifestyle.',
+} = Astro.props
 
 ---
 
-<DefaultLayout id="" title="">
-  <section class="hero my-24">
-    <div class="container">
-      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-        <div class="flex flex-col items-center gap-8 md:items-start">
-          <h1 class="text-center text-6xl md:text-left lg:text-8xl">About Us</h1>
-          <p class="text-2xl">
-            We're a team of experienced dietitians who approach nutrition in a way that promotes enjoyment
-            and exploration into food. We recognise that dietary choices are highly individual and the importance of finding
-            a balance between eating the foods we love and living a healthy lifestyle.
-          </p>
-          <div class="flex flex-col gap-3 min-[500px]:flex-row">
-            <a class="button has-icon" href="#more">
-              <Icon pack="icon-park-outline" name="arrow-down" />
-              Learn More
-            </a>
-            <a class="button has-icon color-secondary" href="/bookings">
-              <Icon pack="ion" name="time" />
-              Book Now
-            </a>
-          </div>
-        </div>
-        <Image class="hidden rounded-lg lg:block" src={team} alt="" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
-        <!--img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" /-->
-      </div>
-    </div>
-  </section>
+<DefaultLayout title={title}>
 
-  <anchorLink />
+  <Hero
+    title={title}
+    blurb={blurb}
+    img={img}
+  />
+
+  <Anchor />
   <section class="my-12">
     <div class="space-content container">
       <h1>

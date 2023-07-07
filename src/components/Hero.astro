@@ -4,7 +4,8 @@ import ButtonBook from '../components/ButtonBook.astro'
 import ButtonMore from '../components/ButtonMore.astro'
 
 import { Image } from "astro:assets"
-import imgHero from '../assets/img/ns-hero.jpg'
+
+const { title, blurb, img } = Astro.props
 ---
 
 <section class="hero my-24">
@@ -12,14 +13,17 @@ import imgHero from '../assets/img/ns-hero.jpg'
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
         <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-          <slot>Nutrition solutions that work for you.</slot>
+          {title}
         </h1>
+        <p class="text-2xl">
+          {blurb}
+        </p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <ButtonMore text="Learn More"/>
           <ButtonBook/>
         </div>
       </div>
-      <Image class="rounded-lg rounded-lg hidden lg:block" src={imgHero} height="1438" width="1458" alt="" style="height: 100%; width: 100%; object-fit: cover;" />
+      <Image class="rounded-lg rounded-lg hidden lg:block" src={img} height="1438" width="1458" alt="" style="height: 100%; width: 100%; object-fit: cover;" />
       <!--img class="rounded-lg hidden lg:block" src={src} alt="" decoding="async" /-->
     </div>
   </div>
