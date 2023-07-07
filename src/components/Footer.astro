@@ -3,7 +3,7 @@ import CallToAction from './CallToAction.astro'
 
 const currentYear = new Date().getFullYear()
 import { Image } from 'astro:assets'
-import logo from '../assets/img/logo.png'
+import logo from '../assets/img/nsv-logo.png'
 ---
 
 <footer>
@@ -14,7 +14,7 @@ import logo from '../assets/img/logo.png'
         <div class="">
           <div class="border-y border-gray-900/10 dark:border-white/10 py-8 mt-16 xl:mt-16 xl:grid xl:grid-cols-3">
             <a href="/" class="flex items-center gap-2 !no-underline">
-              <Image class="" src={logo} alt="" width="47" height="37" style="" />
+              <Image class="" src={logo} alt="" width="100" height="88" style="" />
               <span class="text-2xl font-bold sm:text-3xl">
                 <span class="inline sm:hidden">NSV</span>
                 <span class="hidden sm:inline">Nutrition Solutions Victoria</span>
@@ -40,9 +40,9 @@ import logo from '../assets/img/logo.png'
             <div class="">
               <!--h3 class=" font-semibold leading-6 text-gray-900">Support</h3-->
               <ul role="list" class="mt-6 w-fit space-y-4 xl:mx-auto xl:mt-0">
-                <li>
+                <!-- <li>
                   <a href="#" class="leading-6 text-gray-600 hover:text-gray-900">FAQs</a>
-                </li>
+                </li> -->
                 <li>
                   <a href="/bookings" class="leading-6 text-gray-600 hover:text-gray-900">Bookings</a>
                 </li>
