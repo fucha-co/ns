@@ -1,18 +1,7 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon'
-import {
-  Accordion,
-  AccordionItem,
-  Breadcrumbs,
-  BreadcrumbsItem,
-  Card,
-  Media,
-  Modal,
-  Notification,
-  Pagination,
-} from 'accessible-astro-components'
-
+import Sig from '@components/sig.astro'
 const { img = '/src/assets/img/stock-smile-sunset.jpg' } = Astro.props
 ---
 
@@ -52,6 +41,9 @@ const { img = '/src/assets/img/stock-smile-sunset.jpg' } = Astro.props
         with food and ensure you are feeling healthy and well-nourished after surgery. Our dietitians have experience
         supporting people who have had a gastric sleeve, gastric bypass, gastric band or gastric balloon.
       </p>
+
+      <Sig />
+      
     </div>
   </section>
 </DefaultLayout>
