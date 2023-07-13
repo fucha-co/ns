@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon'
-import Sig from '@components/sig.astro'
+import Sig from '../components/sig.astro';
 const { img = '/src/assets/img/stock-smile-sunset.jpg' } = Astro.props
 ---
 
@@ -43,7 +43,7 @@ const { img = '/src/assets/img/stock-smile-sunset.jpg' } = Astro.props
       </p>
 
       <Sig />
-      
+
     </div>
   </section>
 </DefaultLayout>
