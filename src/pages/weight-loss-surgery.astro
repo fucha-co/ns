@@ -2,7 +2,8 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon'
 import Sig from '../components/Sig.astro';
-const { img = '/src/assets/img/stock-beach.jpg' } = Astro.props
+import { Image } from 'astro:assets'
+import img from '../assets/img/stock-beach.jpg'
 ---
 
 <DefaultLayout id="" title="">
@@ -26,7 +27,7 @@ const { img = '/src/assets/img/stock-beach.jpg' } = Astro.props
             </a>
           </div>
         </div>
-        <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />
+        <Image class="hidden rounded-lg lg:block" src={img} alt="" width="734" height="454" style="height: 100%; width: 100%; object-fit: cover;" />
       </div>
     </div>
   </section>
@@ -59,7 +60,7 @@ const { img = '/src/assets/img/stock-beach.jpg' } = Astro.props
           <li>No longer in contact with your original surgical support team</li>
         </ul>
         <br><br>
-        Please <a href="/contact/">contact us</a> to learn more about how we can help you
+        Please <a href="/contact/">contact us</a> to learn more about how we can help you.
       </p>
 
       <Sig />
