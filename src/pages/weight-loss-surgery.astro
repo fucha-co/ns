@@ -2,7 +2,7 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon'
 import Sig from '../components/Sig.astro';
-const { img = '/src/assets/img/stock-smile-sunset.jpg' } = Astro.props
+const { img = '/src/assets/img/stock-beach.jpg' } = Astro.props
 ---
 
 <DefaultLayout id="" title="">
@@ -32,14 +32,34 @@ const { img = '/src/assets/img/stock-smile-sunset.jpg' } = Astro.props
   </section>
 
   <section class="my-12">
-    <div class="space-content container">
+    <div class="text-2xl space-content container">
       <h1>With Nutrition Solutions</h1>
 
-      <p class="text-2xl max-w-6xl">
-        We are experts in weight loss surgery support, with approximately 80 weight loss surgery clients visiting our
-        clinic each week. We are committed to helping you achieve reach your weight goals, improve your relationship
-        with food and ensure you are feeling healthy and well-nourished after surgery. Our dietitians have experience
-        supporting people who have had a gastric sleeve, gastric bypass, gastric band or gastric balloon.
+      <p class="max-w-6xl">
+        We are experts in weight loss surgery support, with approximately 80 weight loss surgery clients visiting our clinic each week. We are committed to helping you achieve reach your weight goals, improve your relationship with food and ensure you are feeling healthy and well-nourished after surgery. Our dietitians have experience supporting people who have had a gastric sleeve, gastric bypass, gastric band or gastric balloon.
+        <br><br>
+        <strong>We offer a premium service as we:</strong>
+        <br>
+        <ul class="pl-12 list-disc list-inside text-2xl max-w-6xl">
+          <li>Are specialists in weight loss surgery</li>
+          <li>Know when you need nutrition input</li>
+          <li>Can help you overcome weight-plateaus or stalls</li>
+          <li>Can connect you to a community of people who have had weight-loss surgery both online and through support groups</li>
+          <li>Offer on-going education outside of a clinic setting, including regular weight loss surgery workshops</li>
+        </ul>
+        <br><br>
+        <strong>Come and see us if you are:</strong>
+        <br>
+        <ul class="pl-12 list-disc list-inside text-2xl max-w-6xl">
+          <li>About to have surgery and you are not linked in with a dietitian</li>
+          <li>Not achieving the results you were hoping for with surgery</li>
+          <li>Re-gaining weight and need a fresh start</li>
+          <li>Not satisfied with the support you are currently getting</li>
+          <li>Having surgery interstate or overseas and need follow-up close to home</li>
+          <li>No longer in contact with your original surgical support team</li>
+        </ul>
+        <br><br>
+        Please <a href="/contact/">contact us</a> to learn more about how we can help you
       </p>
 
       <Sig />
