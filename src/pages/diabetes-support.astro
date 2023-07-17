@@ -12,9 +12,9 @@ import {
   Notification,
   Pagination,
 } from 'accessible-astro-components'
+import { Image } from 'astro:assets'
 import Sig from '../components/Sig.astro';
-
-const { img = '/src/assets/img/stock-diabetes.jpg' } = Astro.props
+import img from '../assets/img/stock-diabetes.jpg'
 ---
 
 <DefaultLayout id="" title="Diabetes Support">
@@ -38,7 +38,7 @@ const { img = '/src/assets/img/stock-diabetes.jpg' } = Astro.props
             </a>
           </div>
         </div>
-        <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />
+        <Image class="hidden rounded-lg lg:block" src={img} alt="" width="734" height="454" style="height: 100%; width: 100%; object-fit: cover;" />
       </div>
     </div>
   </section>

@@ -14,8 +14,8 @@ import {
 } from 'accessible-astro-components'
 
 import Sig from '../components/Sig.astro';
-
-const { img = '/src/assets/img/stock-on-bed.jpg' } = Astro.props
+import { Image } from 'astro:assets'
+import img from '../assets/img/stock-on-bed.jpg'
 ---
 
 <DefaultLayout id="" title="Food Intolerance and IBS">
@@ -39,7 +39,7 @@ const { img = '/src/assets/img/stock-on-bed.jpg' } = Astro.props
             </a>
           </div>
         </div>
-        <img class="hidden rounded-lg lg:block" src={img} alt="" decoding="async" />
+        <Image class="hidden rounded-lg lg:block" src={img} alt="" width="734" height="454" style="height: 100%; width: 100%; object-fit: cover;" />
       </div>
     </div>
   </section>
