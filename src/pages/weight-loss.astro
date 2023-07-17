@@ -3,7 +3,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon'
 import { Image } from "astro:assets"
 import img from '../assets/img/ns-flex-pair-opti.jpg'
-import Sig from '@components/Sig.astro';
+import Sig from '../components/Sig.astro';
 ---
 
 <DefaultLayout id="" title="">
@@ -33,26 +33,37 @@ import Sig from '@components/Sig.astro';
   </section>
 
   <section class="my-12">
-    <div class="space-content container">
+    <div class="space-content container text-2xl ">
       <h1>
         <!--Icon pack="icon-park-outline" name="abdominal" class="w-10 h-10 inline-block -mt-2 mr-2 text-[#d494ff]"/-->
         With Nutrition Solutions
       </h1>
 
-      <p class="text-2xl max-w-6xl">
+      <p clsass="max-w-6xl">
         Do you feel trapped in a cycle of yo-yo dieting or struggling to budge your weight more than a few kilograms? We
         have seen many people experiencing this, and use a holistic approach to identify why you may be struggling to
         lose weight. We recognise that a one size fits all approach is not appropriate when it comes to
-        weight-management. We can help you to: Stop the yo-yo dieting cycle Manage your snacking Find the style of
-        eating that best suits you Find foods that keep your appetite well controlled Improve your energy levels Our
-        team are committed to helping our clients achieve a body weight they feel comfortable with, improving their
+        weight-management.</p>
+        <br><br>
+        We can help you to: 
+        <ul class="pl-12 list-disc list-inside text-2xl max-w-6xl">
+          <li>Stop the yo-yo dieting cycle</li>
+          <li>Manage your snacking</li>
+          <li>Find the style of eating that best suits you</li>
+          <li>Find foods that keep your appetite well controlled</li>
+          <li>Improve your energy levels</li>
+        </ul>
+        <br><br>
+
+        Our team are committed to helping our clients achieve a body weight they feel comfortable with, improving their
         relationship with food and accomplishing personalised goals. We also work closely with specialist Exercise
-        Physiologists and Eating Behavioural Psychologists and can facilitate referrals if required If you need help
-        with any of the above, or are unsure about how to begin working towards a healthy, nourishing diet for you, get
+        Physiologists and Eating Behavioural Psychologists and can facilitate referrals if required.
+        <br><br>
+        If you need help with any of the above, or are unsure about how to begin working towards a healthy, nourishing diet for you, get
         in touch with us.
       </p>
 
-      <Sig />
+      
 
     </div>
   </section>
