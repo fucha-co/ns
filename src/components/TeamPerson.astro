@@ -1,0 +1,95 @@
+---
+
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+import { Icon } from 'astro-icon'
+
+import { Image } from "astro:assets"
+import team from '../assets/img/ns-team.jpg'
+//const { post } = Astro.props
+---
+
+<DefaultLayout name= title= img= description= url=>
+  <div class="container">
+    <div class="mt-12">
+      <!--Breadcrumbs>
+        <BreadcrumbsItem href="/" label="Home" />
+        <BreadcrumbsItem href="/our-team" label="Team" />
+        <BreadcrumbsItem currentPage={true} label={post.title} />
+      </Breadcrumbs-->
+    </div>
+  </div>
+  <section class="hero my-24">
+    <div class="container">
+      <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+        <div class="flex flex-col items-center gap-8 md:items-start">
+          <h1 class="text-center text-6xl md:text-left lg:text-8xl">
+            {post.name}
+          </h1>
+          <p class="text-3xl">
+            {post.title}.
+          </p>
+          <p class="text-2xl italic">
+            {post.blurb}
+          </p>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon" href="">
+              <Icon pack="icon-park-outline" name="info" />
+              Learn More
+            </a>
+            <a
+              class="button has-icon color-secondary"
+              href="/bookings"
+            >
+              <Icon pack="ion" name="time" />
+              Book Now
+            </a>
+          </div>
+        </div>
+        <Image class="hidden rounded-lg lg:block" src={'../../assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'} alt="" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
+        <!-- img class="hidden rounded-lg lg:block" src={'/src/assets/img/team-' + post.name.replaceAll(' ', '-').toLowerCase() + '.jpg'} alt="" decoding="async" /-->
+      </div>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="container">
+      <h1 class="text-4xl"><Icon pack="mdi" name="think-outline" class="w-12 h-12 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Philosophy</h1><br />
+      <p class="text-2xl max-w-6xl">{post.philosophy}</p>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="container">
+      <h1 class="text-4xl"><Icon pack="icon-park-outline" name="personal-collection" class="w-10 h-10 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Personally</h1><br />
+      <p class="text-2xl max-w-6xl">{post.personal}</p>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="container">
+      <h1 class="text-4xl"><Icon pack="icon-park-outline" name="star" class="w-10 h-10 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Experience</h1><br />
+      <p class="text-2xl max-w-6xl">{post.experience}</p>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="container">
+      <h1 class="text-4xl"><Icon pack="icon-park-outline" name="crown-three" class="w-10 h-10 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Qualifications</h1><br />
+      <p class="text-2xl max-w-6xl">{post.qualifications}</p>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss">
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
+
+    @media (min-width: 550px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+
+    @media (min-width: 950px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
