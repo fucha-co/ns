@@ -1,9 +1,10 @@
 ---
-
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Anchor from '@components/Anchor.astro'
 import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+import ButtonMore from '../../components/ButtonMore.astro'
+import ButtonBook from '../../components/ButtonBook.astro'
 import { Icon } from 'astro-icon'
-
 import { Image } from "astro:assets"
 import img from '../../assets/img/team-ashleigh-gale.jpg'
 //const { post } = Astro.props
@@ -32,18 +33,9 @@ import img from '../../assets/img/team-ashleigh-gale.jpg'
           <p class="text-2xl italic">
             An optional quote-on or blurb-about Ashleigh here
           </p>
-          <div class="flex flex-col gap-3 min-[500px]:flex-row">
-            <a class="button has-icon" href="">
-              <Icon pack="icon-park-outline" name="info" />
-              Learn More
-            </a>
-            <a
-              class="button has-icon color-secondary"
-              href="/bookings"
-            >
-              <Icon pack="ion" name="time" />
-              Book Now
-            </a>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row text-xl">
+            <ButtonMore text="Learn More"/>
+            <ButtonBook/>
           </div>
         </div>
         <Image class="hidden rounded-lg lg:block" src={img} alt="" height="682" width="1024" style="height: 100%; width: 100%; object-fit: cover;" />
@@ -51,6 +43,10 @@ import img from '../../assets/img/team-ashleigh-gale.jpg'
       </div>
     </div>
   </section>
+
+  <Anchor />
+  <br>
+
   <section class="my-12">
     <div class="container">
       <h1 class="text-4xl"><Icon pack="mdi" name="think-outline" class="w-12 h-12 inline-block -mt-2 mr-1.5 text-[#d494ff]"/>Philosophy</h1><br />
